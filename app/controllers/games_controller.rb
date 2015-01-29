@@ -1,11 +1,10 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [ :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @games = Game.all
-    respond_with(@games)
+    @user_input = params[:search]
   end
 
   def show
